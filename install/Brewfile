@@ -1,7 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/core"
 
-brew "docker"
 brew "imagemagick"
 brew "jq"
 brew "python"

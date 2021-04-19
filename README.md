@@ -36,7 +36,7 @@ Use the [Makefile](./Makefile) to install everything [listed above](#package-ove
 and [config](./config) (using [stow](https://www.gnu.org/software/stow/)):
 
 ```bash
-cd ~/.dotfiles
+cd ~/dev/dotfiles
 make
 ```
 

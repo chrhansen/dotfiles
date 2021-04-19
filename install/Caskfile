@@ -4,6 +4,7 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 
 cask "1password"
+cask "docker"
 cask "firefox"
 cask "google-chrome"
 cask "insomnia"
