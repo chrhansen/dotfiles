@@ -1,0 +1,63 @@
+{
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "files.autoSave": "onFocusChange",
+    "editor.rulers": [ 80 ],
+    "workbench.statusBar.visible": true,
+    "[javascript]": {
+      "editor.tabSize": 2
+    },
+    "[json]": {
+      "editor.tabSize": 2
+    },
+    "[ruby]": {
+      "editor.tabSize": 2
+    },
+    "editor.insertSpaces": true,
+    "search.exclude": {
+      "**/.terraform": true,
+      "package-lock.json": true
+    },
+    "editor.minimap.enabled": false,
+    "editor.wordWrap": "on",
+    "window.zoomLevel": 0,
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.activityBar.visible": true,
+    "editor.renderWhitespace": "all",
+    "editor.renderControlCharacters": true,
+    "breadcrumbs.enabled": false,
+    "ActiveFileInStatusBar.enable": true,
+    "editor.scrollBeyondLastLine": false,
+    "editor.padding.bottom": 75,
+    "explorer.confirmDragAndDrop": false,
+    "ActiveFileInStatusBar.fullpath": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "terraform.telemetry.enabled": false,
+    "terraform.lintConfig": "",
+    "workbench.settings.enableNaturalLanguageSearch": false,
+    "workbench.colorCustomizations" : {
+      "terminal.foreground" : "#00FD61",
+      "terminal.background" : "#383737"
+    },
+    "extensions.ignoreRecommendations": true,
+    // "workbench.colorCustomizations": {
+    //   "sideBar.background": "#d5d6d5"
+    // }
+    "update.mode": "none",
+    "explorer.confirmDelete": false,
+    "terraform.languageServer": {
+
+      "external": true,
+      "pathToBinary": "",
+      "args": [
+        "serve"
+      ],
+      "maxNumberOfProblems": 100,
+      "trace.server": "off"
+    },
+    "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true,
+    "workbench.colorTheme": "Default Light+",
+  }

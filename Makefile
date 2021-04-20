@@ -10,7 +10,7 @@ export ACCEPT_EULA=Y
 
 all: $(OS)
 
-macos: sudo core-macos packages oh-my-zsh
+macos: sudo core-macos packages oh-my-zsh vscode
 
 linux: core-linux
 
@@ -73,3 +73,6 @@ test:
 
 oh-my-zsh:
 	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+
+vscode:
+	./macos/vscode/apply.sh

@@ -1,0 +1,6 @@
+hashicorp.terraform
+rebornix.ruby
+RoscoP.ActiveFileInStatusBar
+shd101wyy.markdown-preview-enhanced
+wingrunr21.vscode-ruby
+zoellner.openapi-preview
