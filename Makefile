@@ -14,7 +14,7 @@ macos: sudo core-macos packages vscode oh-my-zsh
 
 linux: core-linux
 
-core-macos: brew bash git npm ruby
+core-macos: brew git npm ruby
 
 core-linux:
 	apt-get update
@@ -31,9 +31,6 @@ packages: brew-packages cask-apps node-packages
 
 brew:
 	is-executable brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-bash: BASH=/usr/local/bin/bash
-bash: SHELLS=/private/etc/shells
 
 git: brew
 	brew install git
