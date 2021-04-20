@@ -30,7 +30,7 @@ endif
 packages: brew-packages cask-apps node-packages
 
 brew:
-	is-executable brew || curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh | bash
+	is-executable brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 bash: BASH=/usr/local/bin/bash
 bash: SHELLS=/private/etc/shells
@@ -59,7 +59,7 @@ test:
 
 oh-my-zsh:
 	ZSH=
-	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	zsh
 	cp config/oh-my-zsh/.zshrc ~/.zshrc
 	chsh -s $(which zsh)
