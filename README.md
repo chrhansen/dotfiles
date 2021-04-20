@@ -33,7 +33,7 @@ git clone https://github.com/chrhansen/dotfiles.git ~/dev/dotfiles
 ```
 
 Use the [Makefile](./Makefile) to install everything [listed above](#package-overview), and symlink [runcom](./runcom)
-and [config](./config) (using [stow](https://www.gnu.org/software/stow/)):
+and [config](./config):
 
 ```bash
 cd ~/dev/dotfiles
