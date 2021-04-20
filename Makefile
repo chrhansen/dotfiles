@@ -30,7 +30,7 @@ endif
 packages: brew-packages cask-apps node-packages
 
 brew:
-	is-executable brew || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	is-executable brew || /bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 git: brew
 	brew install git
@@ -56,10 +56,11 @@ test:
 
 oh-my-zsh:
 	ZSH=
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+	/bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 	cp config/oh-my-zsh/.zshrc ~/.zshrc
 
 vscode:
+	mkdir $(HOME)/Library/Application\ Support/Code/User/
 	cp macos/vscode/settings.json $(HOME)/Library/Application\ Support/Code/User/settings.json
 	cp macos/vscode/keybindings.json $(HOME)/Library/Application\ Support/Code/User/keybindings.json
 	cat macos/vscode/extensions.txt | xargs -L 1 code --install-extension
