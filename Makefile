@@ -34,20 +34,6 @@ brew:
 
 bash: BASH=/usr/local/bin/bash
 bash: SHELLS=/private/etc/shells
-bash: brew
-ifdef GITHUB_ACTION
-	if ! grep -q $(BASH) $(SHELLS); then \
-		brew install bash bash-completion@2 pcre && \
-		sudo append $(BASH) $(SHELLS) && \
-		sudo chsh -s $(BASH); \
-	fi
-else
-	if ! grep -q $(BASH) $(SHELLS); then \
-		brew install bash bash-completion@2 pcre && \
-		sudo append $(BASH) $(SHELLS) && \
-		chsh -s $(BASH); \
-	fi
-endif
 
 git: brew
 	brew install git
@@ -72,8 +58,11 @@ test:
 	. $(NVM_DIR)/nvm.sh; bats test
 
 oh-my-zsh:
-	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+	ZSH=
+	curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash
+	zsh
 	cp config/oh-my-zsh/.zshrc ~/.zshrc
+	chsh -s $(which zsh)
 
 vscode:
 	cp macos/vscode/settings.json $(HOME)/Library/Application\ Support/Code/User/settings.json
