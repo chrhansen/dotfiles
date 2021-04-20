@@ -57,9 +57,7 @@ test:
 oh-my-zsh:
 	ZSH=
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-	zsh
 	cp config/oh-my-zsh/.zshrc ~/.zshrc
-	chsh -s $(which zsh)
 
 vscode:
 	cp macos/vscode/settings.json $(HOME)/Library/Application\ Support/Code/User/settings.json
