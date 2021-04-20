@@ -70,7 +70,7 @@ else
 endif
 
 git: brew
-	brew install git git-extras
+	brew install git
 
 npm:
 	if ! [ -d $(NVM_DIR)/.git ]; then git clone https://github.com/creationix/nvm.git $(NVM_DIR); fi
