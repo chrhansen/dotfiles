@@ -18,4 +18,4 @@ defaults write com.apple.Safari WebKitJavaEnabled -bool false
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2JavaEnabled -bool false
 
 # show the status bar at the bottom (see URL on hover)
-defaults write com.apple.Safari 'ShowStatusBar' -bool true
+defaults write com.apple.Safari ShowOverlayStatusBar -bool true
