@@ -40,10 +40,14 @@ cd ~/dev/dotfiles
 make
 ```
 
-The installation process in the Makefile is tested on every push and every week in this
-[GitHub Action](https://github.com/chrhansen/dotfiles/actions).
-
 ## Post-Installation
+
+### Turn on "Full Disk Access" for Terminal before applying defaults
+On Big Sur/Safari 14 some apps are sandboxed under System Integrity Protection (SIP). This means that if Terminal is not allowed "Full Disk Access" the `defaults write ...` used in macos-settings, Terminal will be editing a plist-file in `~/Library/Preferences/` that is not actually in use by Safari 14. If "Full Disk Access" `defaults write ...` will edit the correct sandboxed plist file for Safari 14. So
+Go to Preferences > Security & Privacy > Privacy > Turn on "Full Disk Access" for Terminal. Restart the terminal and then you can run the defaults.
+
+#### Turn off "Full Disk Access" for Terminal after applying defaults
+Remember to do this.
 
 - `dotfiles dock` (set [Dock items](./macos/dock.sh))
 - `dotfiles macos` (set [macOS defaults](./macos/defaults.sh))
@@ -67,14 +71,6 @@ Commands:
     test             Run tests
     update           Update packages and pkg managers (OS, brew, npm, gem)
 ```
-
-## Customize
-
-You can put your custom settings, such as Git credentials in the `system/.custom` file which will be sourced from
-`.bash_profile` automatically. This file is in `.gitignore`.
-
-Alternatively, you can have an additional, personal dotfiles repo at `~/.extra`. The runcom `.bash_profile` sources all
-`~/.extra/runcom/*.sh` files.
 
 ## Additional Resources
 
