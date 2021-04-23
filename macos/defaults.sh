@@ -77,6 +77,13 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeF
 # defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 ###############################################################################
+# Accessibility                                                            #
+###############################################################################
+
+# Enables "control + Use scroll gesture" in the Zoom options
+defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
+
+###############################################################################
 # Screen                                                                      #
 ###############################################################################
 
