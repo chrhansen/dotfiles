@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/chrh/.oh-my-zsh"
