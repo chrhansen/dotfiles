@@ -10,7 +10,7 @@ export ACCEPT_EULA=Y
 
 all: $(OS)
 
-macos: sudo core-macos packages vscode oh-my-zsh
+macos: sudo oh-my-zsh core-macos packages vscode
 
 linux: core-linux
 
