@@ -49,8 +49,9 @@ Go to Preferences > Security & Privacy > Privacy > Turn on "Full Disk Access" fo
 #### Turn off "Full Disk Access" for Terminal after applying defaults
 Remember to do this.
 
-- `dotfiles dock` (set [Dock items](./macos/dock.sh))
-- `dotfiles macos` (set [macOS defaults](./macos/defaults.sh))
+- `dot dock` (set [Dock items](./macos/dock.sh))
+- `dot macos` (set [macOS defaults](./macos/defaults.sh))
+
 - Mackup
   - Log in to Dropbox (and wait until synced)
   - `ln -s ~/.config/mackup/.mackup.cfg ~` (until [#632](https://github.com/lra/mackup/pull/632) is fixed)
@@ -59,8 +60,8 @@ Remember to do this.
 ## The `dotfiles` command
 
 ```bash
-$ dotfiles help
-Usage: dotfiles <command>
+$ dot help
+Usage: dot <command>
 
 Commands:
     clean            Clean up caches (brew, npm, gem, rvm)

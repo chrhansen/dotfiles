@@ -2,7 +2,7 @@ SHELL = /bin/bash
 DOTFILES_DIR := $(shell dirname $(realpath $(firstword $(MAKEFILE_LIST))))
 OS := $(shell bin/is-supported bin/is-macos macos linux)
 PATH := $(DOTFILES_DIR)/bin:$(PATH)
-NVM_DIR := $(HOME)/.nvm
+HOMEBREW_PREFIX := $(shell bin/is-supported bin/is-arm64 /opt/homebrew /usr/local)
 export XDG_CONFIG_HOME = $(HOME)/.config
 export ACCEPT_EULA=Y
 
@@ -30,29 +30,34 @@ endif
 packages: brew-packages cask-apps node-packages
 
 brew:
-	is-executable brew || /bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+	is-executable brew || /bin/bash -c "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+bash: BASH=$(HOMEBREW_PREFIX)/bin/bash
+bash: SHELLS=/private/etc/shells
+bash: brew
+	if ! grep -q $(BASH) $(SHELLS); then \
+		brew install bash bash-completion@2 pcre && \
+		sudo append $(BASH) $(SHELLS) && \
+		chsh -s $(BASH); \
+	fi
 
 git: brew
 	brew install git
 
-npm:
-	if ! [ -d $(NVM_DIR)/.git ]; then git clone https://github.com/creationix/nvm.git $(NVM_DIR); fi
-	. $(NVM_DIR)/nvm.sh; nvm install --lts
+npm: brew-packages
+	fnm install --lts
 
 ruby: brew
 	brew install ruby
 
 brew-packages: brew
-	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile
+	brew bundle --file=$(DOTFILES_DIR)/install/Brewfile || true
 
 cask-apps: brew
 	brew bundle --file=$(DOTFILES_DIR)/install/Caskfile || true
 
 node-packages: npm
-	. $(NVM_DIR)/nvm.sh; npm install -g $(shell cat install/npmfile)
-
-test:
-	. $(NVM_DIR)/nvm.sh; bats test
+	eval $$(fnm env); npm install -g $(shell cat install/npmfile)
 
 oh-my-zsh:
 	ZSH=
