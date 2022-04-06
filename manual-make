@@ -1,0 +1,22 @@
+# oh-my-zsh
+ZSH=
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+cp config/oh-my-zsh/.zshrc ~/.zshrc
+
+# brew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+# git
+brew install git
+
+# brew-packages
+brew bundle --file=./install/Brewfile || true
+
+# cask-apps
+brew bundle --file=./install/Caskfile || true
+
+# vscode config
+mkdir -p $(HOME)/Library/Application\ Support/Code/User/
+cp macos/vscode/settings.json $(HOME)/Library/Application\ Support/Code/User/settings.json
+cp macos/vscode/keybindings.json $(HOME)/Library/Application\ Support/Code/User/keybindings.json
+cat macos/vscode/extensions.txt | xargs -L 1 code --install-extension
