@@ -23,10 +23,7 @@ source $ZSH/oh-my-zsh.sh
 export GITHUB_USERNAME="chrhansen"
 export GITHUB_TOKEN=
 
-# rbenv to manage ruby-versions
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# export PATH="$HOME/.rbenv/shims:$PATH"
-# eval "$(rbenv init -)"
+alias python=/usr/bin/python3
 
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
