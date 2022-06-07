@@ -9,7 +9,6 @@ export ZSH="/Users/chrh/.oh-my-zsh"
 # For signed git-commits, https://github.com/microsoft/vscode/issues/130415
 export GPG_TTY=$(tty)
 
-export GOOGLE_CREDENTIALS="json-file-path"
 export GOOGLE_APPLICATION_CREDENTIALS="json-file-path"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -19,12 +18,13 @@ export GOOGLE_APPLICATION_CREDENTIALS="json-file-path"
 ZSH_THEME="robbyrussell"
 ZSH_DISABLE_COMPFIX=true
 
-plugins=(git)
+plugins=(git asdf)
 
 source $ZSH/oh-my-zsh.sh
 
 export GITHUB_USERNAME="chrhansen"
 export GITHUB_TOKEN=
+export BUNDLE_RUBYGEMS__PKG__GITHUB__COM=$GITHUB_TOKEN
 
 alias python=/usr/bin/python3
 
