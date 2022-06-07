@@ -6,6 +6,9 @@ export PATH="/opt/homebrew/bin:$PATH"
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/chrh/.oh-my-zsh"
 
+# For signed git-commits, https://github.com/microsoft/vscode/issues/130415
+export GPG_TTY=$(tty)
+
 export GOOGLE_CREDENTIALS="json-file-path"
 export GOOGLE_APPLICATION_CREDENTIALS="json-file-path"
 
