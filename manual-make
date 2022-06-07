@@ -16,7 +16,7 @@ brew bundle --file=./install/Brewfile || true
 brew bundle --file=./install/Caskfile || true
 
 # vscode config
-mkdir -p $(HOME)/Library/Application\ Support/Code/User/
-cp macos/vscode/settings.json $(HOME)/Library/Application\ Support/Code/User/settings.json
-cp macos/vscode/keybindings.json $(HOME)/Library/Application\ Support/Code/User/keybindings.json
-cat macos/vscode/extensions.txt | xargs -L 1 code --install-extension
+mkdir -p ~/Library/Application\ Support/Code/User/
+cp ./macos/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+cp ./macos/vscode/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+cat ./macos/vscode/extensions.txt | xargs -L 1 code --install-extension
